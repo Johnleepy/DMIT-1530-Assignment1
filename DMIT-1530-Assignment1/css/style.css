@@ -9,8 +9,8 @@ body {
 
 .container,
 .hero section,
-.product-features,
-.content-blocks div:first-of-type,
+.services,
+.resources div:first-of-type,
 article div:first-of-type {
     max-width: 1100px;
     margin: 0 auto;
@@ -34,7 +34,8 @@ h3 {
     line-height: 3.1875rem;
 }
 
-p {
+p,
+span {
     line-height: 1.5rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -60,14 +61,14 @@ a:hover {
 }
 
 .hero,
-.product-features,
-.content-blocks,
+.services,
+.resources,
 article {
     padding: 2.375rem 2rem 2rem 2rem;
 }
 
 .hero,
-.content-blocks {
+.resources {
     background-color: #ededed;
 }
 
@@ -109,7 +110,7 @@ img {
     border-radius: 0.3rem;
 }
 
-/* Main content */
+/* services */
 .asterisk {
     margin-top: 2rem;
     margin-bottom: 0;
@@ -123,12 +124,16 @@ section:not(:nth-of-type(1)) .asterisk {
     font-size: 2.2rem;
 }
 
-/* content-blocks */
-.content-blocks section.flex {
+/* resources */
+.resources .flex {
     margin-bottom: 2rem;
 }
 
-.stand-alone-block .quote {
+.resources img {
+    margin-top: 1rem;
+}
+
+.quote {
     background-color: #111111;
     padding: 6.5rem 2rem 6.5rem 2rem;
     color: #ededed;
@@ -145,27 +150,27 @@ blockquote {
     color: #a4a4a4;
 }
 
-.quote .left-aligned {
+.features {
     text-align: left;
     padding-left: 1rem;
     margin-bottom: 1rem;
 }
 
-.left-aligned p {
+.features p {
     margin: 0;
 }
 
-.stand-alone-block .sign-up {
+.sign-up {
     padding: 2rem 2rem 2rem 2rem;
     background-color: #ededed;
 }
 
-.sign-up .white-background {
+.sign-up> :nth-child(1) {
     background-color: white;
     padding: 3rem;
 }
 
-.white-background p:nth-of-type(1) {
+.sign-up> :nth-child(1) p:nth-of-type(1) {
     font-size: 1.75rem;
     line-height: 3.1875rem;
 }
@@ -203,18 +208,18 @@ footer p {
     width: 16rem;
 }
 
-footer .links {
+.footer-links {
     display: flex;
     gap: 1rem;
     text-align: left;
 }
 
-.links li:nth-child(1) {
+.footer-links li:nth-child(1) {
     font-weight: bold;
     font-size: 1.2rem;
 }
 
-.links a {
+.footer-links a {
     line-height: 2rem;
     font-size: 0.8rem;
 }
@@ -227,33 +232,33 @@ footer .links {
         justify-content: space-around;
     }
 
-    .product-features .flex {
+    .services .flex {
         display: flex;
         text-align: left;
     }
 
-    .product-features .flex section {
+    .services .flex section {
         width: calc((100% - 3rem) / 2);
     }
 
-    .content-blocks .flex {
+    .resources .flex {
         text-align: left;
     }
 
-    .left-aligned {
+    .features {
         padding-left: 1rem;
         padding-bottom: 1rem;
     }
 
-    .content-blocks .flex img {
+    .resources .flex img {
         width: 50%;
     }
 
-    .content-blocks .flex:last-of-type img {
+    .resources .flex:last-of-type img {
         order: -1;
     }
 
-    .white-background {
+    .sign-up> :nth-child(1) {
         width: 70%;
         margin-left: 15%;
     }
@@ -267,26 +272,26 @@ footer .links {
 }
 
 @media screen and (min-width: 1100px) {
-    .product-features .flex section {
+    .services .flex section {
         width: calc((100% - 3rem) / 3);
     }
 
-    .content-blocks .flex-large {
+    .resources> :nth-child(2) {
         display: flex;
         gap: 2rem;
     }
 
-    .content-blocks .flex {
+    .resources .flex {
         display: block;
     }
 
-    .content-blocks .flex img {
+    .resources .flex img {
         width: 100%;
     }
 }
 
 /* Service Page */
-article:nth-of-type(1) p:nth-of-type(1),
+article:nth-of-type(1) .text,
 article h1,
 article:nth-of-type(2) p:nth-of-type(1),
 article h2 {
@@ -299,17 +304,14 @@ article h2 {
     text-align: left;
 }
 
-article:nth-of-type(1) {
+article:nth-of-type(1),
+article:nth-of-type(3) {
     background-color: #ededed;
 }
 
 article:nth-of-type(2) {
     background-color: #111111;
     color: #ededed;
-}
-
-article:nth-of-type(3) {
-    background-color: #ededed;
 }
 
 article:nth-of-type(4) p {
@@ -321,7 +323,7 @@ article:nth-of-type(4) p:nth-of-type(even) {
 }
 
 @media screen and (min-width: 700px) {
-    article div:first-of-type {
+    article> :first-child {
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
@@ -329,11 +331,8 @@ article:nth-of-type(4) p:nth-of-type(even) {
     }
 
     article img,
-    article:nth-of-type(1) p,
     .pic-and-cap,
-    article:nth-of-type(2) .text,
-    article:nth-of-type(3) .text,
-    article:nth-of-type(4) div:not(:first-of-type) {
+    .text {
         width: 49%;
     }
 
@@ -348,14 +347,17 @@ article:nth-of-type(4) p:nth-of-type(even) {
         width: 100%;
     }
 
+    article:first-of-type img {
+        margin-top: 1rem;
+    }
+
     .pic-and-cap {
         order: -1;
         margin-top: 1rem;
     }
 
-    .pic-and-cap figcaption {
+    .pic-and-cap p {
         text-align: left;
-        line-height: 1.5rem;
     }
 
     article:nth-of-type(2) {
@@ -370,19 +372,21 @@ article:nth-of-type(4) p:nth-of-type(even) {
         width: 100%;
     }
 
-    article:nth-of-type(4) div:first-of-type div:first-of-type {
+    article:nth-of-type(4) div:nth-of-type(2) {
         margin: 0;
         width: 49%;
     }
 
-    .margin-bottom {
-        margin-bottom: 1em;
+    article:nth-of-type(4) .text,
+    article:nth-of-type(4)>div>p:first-of-type {
+        margin-bottom: 1rem;
     }
 }
 
 @media screen and (min-width: 1100px) {
+
     article:nth-of-type(4) div:not(:first-of-type),
-    article:nth-of-type(4) div:first-of-type div:first-of-type {
+    article:nth-of-type(4)>div>div:first-of-type {
         width: 24%;
     }
 
@@ -390,4 +394,3 @@ article:nth-of-type(4) p:nth-of-type(even) {
         align-items: center;
     }
 }
-
