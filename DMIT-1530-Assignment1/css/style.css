@@ -293,7 +293,7 @@ footer p {
 /* Service Page */
 article:nth-of-type(1) .text,
 article h1,
-article:nth-of-type(2) p:nth-of-type(1),
+.large-font,
 article h2 {
     font-size: 28px;
     line-height: 51px;
@@ -322,6 +322,10 @@ article:nth-of-type(4) p:nth-of-type(even) {
     font-weight: bold;
 }
 
+.pic-and-cap p {
+    text-align: left;
+}
+
 @media screen and (min-width: 700px) {
     article> :first-child {
         display: flex;
@@ -333,7 +337,7 @@ article:nth-of-type(4) p:nth-of-type(even) {
     article img,
     .pic-and-cap,
     .text {
-        width: 49%;
+        width: 48%;
     }
 
     article p {
@@ -354,10 +358,6 @@ article:nth-of-type(4) p:nth-of-type(even) {
     .pic-and-cap {
         order: -1;
         margin-top: 1rem;
-    }
-
-    .pic-and-cap p {
-        text-align: left;
     }
 
     article:nth-of-type(2) {
@@ -392,5 +392,33 @@ article:nth-of-type(4) p:nth-of-type(even) {
 
     article:nth-of-type(4) {
         align-items: center;
+    }
+}
+
+/* 404 */
+.main-404 {
+    background: url(../images/background-for-404.jpg) center / cover no-repeat;
+    height: calc(100vh - 153.25px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.return-btn {
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 10rem;
+    height: 3rem;
+}
+
+.return-btn a {
+    color: #000000;
+    line-height: 3rem;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 700px) {
+    .main-404 {
+        height: calc(100vh - 199.75px);
     }
 }
