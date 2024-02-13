@@ -1,0 +1,181 @@
+/* Global */
+:root {
+    --font-family: 'Inter', sans-serif;
+    --font-size: 16px;
+    --line-height: 1.5rem;
+    --padding: 2rem;
+    --color: #ededed;
+    --bg-dark: #000000;
+    --bg-light: #ededed;
+    --accent: #111111;
+}
+
+body {
+    font-size: var(--font-size);
+    text-align: center;
+    margin: 0 auto;
+    min-width: 24.375rem;
+    font-family: var(--font-family);
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+h1,
+h2 {
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 3.1875rem;
+}
+
+p {
+    line-height: var(--line-height);
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.hero,
+.content-blocks {
+    padding: var(--padding);
+    background-color: var(--bg-light);
+}
+
+/* header & footer */
+.header,
+.footer {
+    background-color: var(--bg-dark);
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.company-logo,
+.footer p {
+    width: 75%;
+    text-align: center;
+}
+
+.header ul,
+.footer .links {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.footer .links li:nth-child(1) {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.footer .links a {
+    line-height: 2rem;
+    font-size: 0.8rem;
+}
+
+/* Hero */
+.hero .about-us-btn {
+    width: 6.125rem;
+    height: 3.5rem;
+    background-color: var(--accent);
+    margin: calc((100% - 6.125rem) / 2);
+    line-height: 3.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.3rem;
+}
+
+/* Main content */
+.asterisk {
+    margin: 2rem 0;
+    font-size: 2.5rem;
+}
+
+section:nth-of-type(odd) .asterisk {
+    font-size: 2.2rem;
+}
+
+/* content-blocks */
+.stand-alone-block {
+    display: flex;
+}
+
+.stand-alone-block>* {
+    padding: var(--padding);
+}
+
+.quote {
+    background-color: var(--accent);
+    color: var(--color);
+    line-height: 2.5rem;
+}
+
+blockquote {
+    margin: 0;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.quote p:nth-last-child(1) {
+    color: #a4a4a4;
+}
+
+.quote .left-aligned {
+    text-align: left;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.left-aligned p {
+    margin: 0;
+}
+
+.sign-up {
+    background-color: var(--bg-light);
+}
+
+.sign-up .white-background {
+    background-color: white;
+    padding: 3rem;
+}
+
+
+.white-background p:nth-of-type(1) {
+    font-size: 1.75rem;
+    line-height: 3.1875rem;
+}
+
+.sign-up-btn {
+    background-color: var(--accent);
+    width: 5.375rem;
+    height: 3rem;
+    margin: calc((100% - 5.375rem) / 2);
+    margin-bottom: 1.5rem;
+    border-radius: 0.3rem;
+}
+
+.sign-up-btn a {
+    line-height: 3rem;
+}
